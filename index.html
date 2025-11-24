@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Entrenador de Oído Musical</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Entrenamiento Auditivo</h1>
+    <div class="subtitle">Escucha, visualiza e identifica el acorde</div>
+  </header>
+
+  <div class="canvas-wrapper" id="canvasContainer">
+    <canvas id="staff" aria-label="Pentagrama musical"></canvas>
+  </div>
+
+  <div class="controls-area">
+    <div class="controls-grid">
+      
+      <div style="flex: 1; width: 100%;">
+        <div class="label-mini" style="margin-bottom:8px">Tu Respuesta</div>
+        
+        <div class="input-row">
+          <select id="rootSelect" aria-label="Nota fundamental">
+            <option value="" disabled selected>Fundamental</option>
+            </select>
+
+          <select id="qualitySelect" aria-label="Cualidad del acorde">
+            <option value="" disabled selected>Cualidad</option>
+            <option value="major">Mayor</option>
+            <option value="minor">Menor</option>
+            <option value="dim">Disminuido</option>
+            <option value="aug">Aumentado</option>
+            <option value="maj7">Maj7</option>
+            <option value="7">7</option>
+            <option value="m7">m7</option>
+            <option value="dim7">dim7</option>
+          </select>
+
+          <button id="submitBtn" class="btn-primary">Comprobar</button>
+        </div>
+
+        <div class="actions-row">
+          <button id="playBtn" class="btn-secondary">▶️ Escuchar</button>
+          <button id="revealBtn" class="btn-secondary">👁️ Ver Solución</button>
+          <button id="nextBtn" class="btn-secondary" style="margin-left:auto; background:var(--text); color:white; border:none;">Siguiente ➡️</button>
+        </div>
+      </div>
+
+      <div class="difficulty-group">
+        <div class="label-mini">Nivel de Dificultad</div>
+        <div class="segmented-control">
+          <button id="btnEasy" onclick="setDifficulty('easy')">Fácil</button>
+          <button id="btnMedium" onclick="setDifficulty('medium')" class="active">Medio</button>
+          <button id="btnHard" onclick="setDifficulty('hard')">Difícil</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="status-bar">
+    <div id="feedbackMsg">Dale a "Escuchar" para empezar.</div>
+    <div class="score-pill">Aciertos: <span id="correct">0</span> / <span id="attempts">0</span></div>
+  </div>
+</div>
+
+<script src="main.js">
+
+</script>
+</body>
+</html>
